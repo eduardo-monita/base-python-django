@@ -21,6 +21,11 @@ Este é a base de criação de um ambiente em Django, com algumas boas práticas
 
 ## Comandos para criar o projeto do zero.
 Observação: todos esses passo estão em uso neste repositório.
+- Atualizar o pip: `pip install --upgrade pip`;
+- Instalar a virtualenv: `virtualenv venv -p python3`;
+- Criá-la na pasta raiz do projeto: `venv/Scripts/activate`;
+- Criar o arquivo "requirements.txt", e colocar dentro dele no mínimo o Django `django==*`, onde pegará a versão mais atual.
+- Instalar os pacotes necessários: `pip install -r requirements.txt`;
 - Criar a pasta principal do Djando: `django-admin startproject main`;
 - Alterar a pasta raiz com o nome do projeto ou 'app';
 - Criando um app da aplicação: `python manage.py startapp example_app`.
@@ -48,3 +53,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
+### Seguir os próximos passos para rodas o projeto.
+- Entra na pasta app `cd app`; 
+- Criar o banco de dados desejado e subistituir no arquivo app/main/settings.py na variável 'DATABASES';
+- Baixar todos os arquivos estáticos do manager do django: `python manage.py collectstatic`;
+- Criar um usuário no seu admin: `python manage.py createsuperuser`;
+- Criar as tabelas da Django: `python manage.py migrate`;
+- Rodar o servidor: `python manage.py runserver`;
+- Acessar no browser: `http://localhost:8000/admin`.
