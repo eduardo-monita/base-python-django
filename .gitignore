@@ -1,3 +1,7 @@
-venv/
-app/static/
-app/media/
+venv/*
+
+app/static/*
+!app/static/.keep
+
+app/media/*
+!app/media/.keep
